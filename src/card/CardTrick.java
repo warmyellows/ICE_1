@@ -35,24 +35,23 @@ public class CardTrick {
            
 
         }
-        //insert code to ask the user for Card value and suit, create their card
-
-        Card userGuess = new Card();
+    
+         //Hard code luckyCard Object
+        Card luckyCard = new Card();
         System.out.print("Please pick a card, any card from a deck of 52!");
-        Scanner inp = new Scanner(System.in);
-
-        userGuess.setValue(inp.nextInt());
-        userGuess.setSuit(inp.nextLine());
-        String userGuessString = userGuess.getSuit();
+        luckyCard.setValue(9);
+        luckyCard.setSuit("Diamonds");
+        String luckyCardString = luckyCard.getSuit();
         
         //Removing any spaces that would hinder my search
-        userGuessString = userGuessString.trim();
+       luckyCardString= luckyCardString.trim();
+        
         // and search magicHand here
         int flag = 0;
         for (int i = 0; i < magicHand.length; i++) {
             String temporarySuit = magicHand[i].getSuit();
             
-            if ((magicHand[i].getValue() == userGuess.getValue()) &&(temporarySuit.equalsIgnoreCase(userGuessString))) {
+            if ((magicHand[i].getValue() == luckyCard.getValue()) &&(temporarySuit.equalsIgnoreCase(luckyCardString))) {
 
                 flag = 1;
  
